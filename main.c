@@ -40,6 +40,13 @@ int BegSearch(char* string)
     return j;
 }
 
+void ErrorOutputCoordinates(char* string)
+{
+    printf("\n");
+    printf("%s\n", string);
+    printf("Incorrect input of coordinates...\n");
+}
+
 void InputXOfCircle(char* string, int i, int m, Circle* circle)
 {
     i = i - m;
