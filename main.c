@@ -47,6 +47,13 @@ void ErrorOutputCoordinates(char* string)
     printf("Incorrect input of coordinates...\n");
 }
 
+void ErrorOutputRadius(char* string)
+{
+    printf("\n");
+    printf("%s\n", string);
+    printf("Incorrect input of radius...\n");
+}
+
 void InputXOfCircle(char* string, int i, int m, Circle* circle)
 {
     i = i - m;
