@@ -42,6 +42,25 @@ int BegSearch(char* string)
 
 int CheckCircleArguments(char* string, Circle* circle)
 {
+    int i = 0;
+    while (string[i] != '(') {
+        i++;
+    }
+    i++;
+    while (string[i] == ' ') {
+        i++;
+    }
+    int m = 0;
+    if (string[i] == '-' || (string[i] >= 0x30 && string[i] <= 0x39)) {
+        while (string[i] == '-' || (string[i] >= 0x30 && string[i] <= 0x39)) {
+            m++;
+            i++;
+        }
+        InputXOfCircle(string, i, m, circle);
+    } else {
+        ErrorOutputCoordinates(string);
+        return 0;
+    }
 }
 
 int CheckArgName(char* cstring, Circle* ccircle)
