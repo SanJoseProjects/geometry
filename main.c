@@ -87,6 +87,24 @@ int CheckCircleArguments(char* string, Circle* circle)
         ErrorOutputCoordinates(string);
         return 0;
     }
+    if (string[i] != ' ') {
+        ErrorOutputCoordinates(string);
+        return 0;
+    }
+    while (string[i] == ' ') {
+        i++;
+    }
+    m = 0;
+    if (string[i] == '-' || (string[i] >= 0x30 && string[i] <= 0x39)) {
+        while (string[i] == '-' || (string[i] >= 0x30 && string[i] <= 0x39)) {
+            m++;
+            i++;
+        }
+        InputYOfCircle(string, i, m, circle);
+    } else {
+        ErrorOutputCoordinates(string);
+        return 0;
+    }
 }
 
 int CheckArgName(char* cstring, Circle* ccircle)
