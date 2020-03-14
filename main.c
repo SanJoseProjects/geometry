@@ -189,7 +189,6 @@ int CheckCircleArguments(char* string, Circle* circle)
     }
     return 1;
 }
-}
 
 int CheckArgName(char* cstring, Circle* ccircle)
 {
