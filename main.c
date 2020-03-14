@@ -54,6 +54,13 @@ void ErrorOutputRadius(char* string)
     printf("Incorrect input of radius...\n");
 }
 
+void ErrorOutputArgument(char* string)
+{
+    printf("\n");
+    printf("%s\n", string);
+    printf("Incorrect input of argument...\n");
+}
+
 void InputXOfCircle(char* string, int i, int m, Circle* circle)
 {
     i = i - m;
