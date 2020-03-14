@@ -189,6 +189,13 @@ int CheckArgName(char* cstring, Circle* ccircle)
     }
 }
 
+void PrintCircle(char* string, Circle* circle)
+{
+    printf("Perimeter of circle is %.2f\n", (float)circle->radius * 2 * 3.14);
+    printf("Square of circle is %.2f\n",
+           (float)circle->radius * (float)circle->radius * 3.14);
+}
+
 int main()
 {
     Circle circle;
@@ -197,5 +204,8 @@ int main()
     fgets(string, 100 - 1, stdin);
     int check = CheckArgName(string, &circle);
 
+    if (check == 1) {
+        PrintCircle(string, &circle);
+    }
     return 0;
 }
