@@ -124,6 +124,38 @@ int CheckCircleArguments(char* string, Circle* circle)
         ErrorOutputCoordinates(string);
         return 0;
     }
+    while (string[i] != ',') {
+        i++;
+    }
+    if (string[i] != ',') {
+        ErrorOutputArgument(string);
+        return 0;
+    } else {
+        i++;
+    }
+    while (string[i] == ' ') {
+        i++;
+    }
+    m = 0;
+    if (string[i] >= 0x30 && string[i] <= 0x39) {
+        while (string[i] >= 0x30 && string[i] <= 0x39) {
+            m++;
+            i++;
+        }
+        InputRadiusOfCircle(string, i, m, circle);
+    } else {
+        ErrorOutputRadius(string);
+        return 0;
+    }
+    while (string[i] == ' ') {
+        i++;
+    }
+    if (string[i] != ')') {
+        ErrorOutputArgument(string);
+        return 0;
+    }
+    return 1;
+}
 }
 
 int CheckArgName(char* cstring, Circle* ccircle)
