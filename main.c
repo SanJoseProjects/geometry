@@ -18,6 +18,15 @@ typedef struct {
     long int radius;
 } Circle;
 
+int BegSearch(char* string)
+{
+    int j = 0;
+    while (string[j] == ' ') {
+        j++;
+    }
+    return j;
+}
+
 int CheckArgName(char* cstring, Circle* ccircle)
 {
     int j = BegSearch(cstring);
