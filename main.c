@@ -40,6 +40,25 @@ int BegSearch(char* string)
     return j;
 }
 
+void InputXOfCircle(char* string, int i, int m, Circle* circle)
+{
+    i = i - m;
+    int j = 0;
+    char* str;
+    char* endStr;
+    str = malloc((m + 1) * sizeof(char));
+    while ((i < i + m) && (j < m)) {
+        if (j < m) {
+            *(str + j) = string[i];
+            j++;
+        }
+        i++;
+    }
+    *(str + m + 1) = '\0';
+    circle->centre.x = strtol(str, &endStr, 10);
+    free(str);
+}
+
 int CheckCircleArguments(char* string, Circle* circle)
 {
     int i = 0;
