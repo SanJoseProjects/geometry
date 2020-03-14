@@ -40,6 +40,10 @@ int BegSearch(char* string)
     return j;
 }
 
+int CheckCircleArguments(char* string, Circle* circle)
+{
+}
+
 int CheckArgName(char* cstring, Circle* ccircle)
 {
     int j = BegSearch(cstring);
@@ -47,6 +51,14 @@ int CheckArgName(char* cstring, Circle* ccircle)
     char circle[] = {"circle"};
 
     int flagc = sequal(circle, cstring, j);
+
+    if (flagc) {
+        return CheckCircleArguments(cstring, ccircle);
+    } else {
+        printf("\n%s\n", cstring);
+        printf("Incorrect input name of figure...\n");
+        return 0;
+    }
 }
 
 int main()
