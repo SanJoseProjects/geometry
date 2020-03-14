@@ -18,12 +18,20 @@ typedef struct {
     long int radius;
 } Circle;
 
+int CheckArgName(char* cstring, Circle* ccircle)
+{
+    int j = BegSearch(cstring);
+
+    char circle[] = {"circle"};
+}
+
 int main()
 {
     Circle circle;
     char string[100];
     printf("Input circle and his parametres: \n");
     fgets(string, 100 - 1, stdin);
+    int check = CheckArgName(string, &circle);
 
     return 0;
 }
